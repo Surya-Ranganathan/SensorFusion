@@ -21,12 +21,12 @@ The **Kalman filter** runs in two steps: **Prediction** and **Update**.
 ### 1. Prediction Step
 
 $$
-\hat{x}_k^- = A \, \hat{x}_{k-1} + B \, u_{k-1}
+\begin{aligned}
+\hat{x}_k^- &= A \, \hat{x}_{k-1} + B \, u_{k-1} \\
+P_k^- &= A \, P_{k-1} \, A^T + Q
+\end{aligned}
 $$
 
-$$
-P_k^- = A \, P_{k-1} \, A^T + Q
-$$
 
 **Where:**
 - \( \hat{x}_k^- \) → Predicted state estimate  
@@ -42,17 +42,24 @@ $$
 
 **Kalman Gain:*
 $$
+\begin{aligned}
 K_k = P_k^- H^T \left( H \, P_k^- \, H^T + R \right)^{-1}
+\end{aligned}
+
 $$
 
 **State Update:**
 $$
+\begin{aligned}
 \hat{x}_k = \hat{x}_k^- + K_k \left( z_k - H \, \hat{x}_k^- \right)
+\end{aligned}
 $$
 
 **Covariance Update:**
 $$
+\begin{aligned}
 P_k = (I - K_k \, H) \, P_k^-
+\begin{aligned}
 $$
 
 **Where:**
@@ -67,7 +74,9 @@ $$
 ### 3. Final Projection Equation (World to Measurement Space)
 
 $$
+\begin{aligned}
 s \cdot u = K \, [R \, | \, T] \, X
+\begin{aligned}
 $$
 
 **Where:**
