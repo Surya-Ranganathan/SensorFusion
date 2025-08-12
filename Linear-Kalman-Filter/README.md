@@ -22,21 +22,21 @@ The **Kalman filter** runs in two steps: **Prediction** and **Update**.
 
 ### 1. Prediction Step
 
-<!-- $$ -->
-$\hat{x}_k^- = A \hat{x}_{k-1} + B u_{k-1}$
-<!-- $$ -->
+$$
+\hat{x}_k^- = A \hat{x}_{k-1} + B u_{k-1}
+$$
 
 $$
 P_k^- = A \, P_{k-1} \, A^T + Q
 $$
 
 **Where:**  
-- \( \hat{x}_k^- \): Predicted state estimate  
-- \( P_k^- \): Predicted covariance estimate  
-- \( A \): State transition matrix  
-- \( B \): Control input matrix  
-- \( u_{k-1} \): Control input at step \( k-1 \)  
-- \( Q \): Process noise covariance matrix  
+- \($ \hat{x}_k^- $\): Predicted state estimate  
+- \($ P_k^- $\): Predicted covariance estimate  
+- \($ A $\): State transition matrix  
+- \($ B $\): Control input matrix  
+- \($ u_{k-1} $\): Control input at step \($ k-1 $\)  
+- \($ Q $\): Process noise covariance matrix  
 
 ---
 
@@ -61,11 +61,11 @@ P_k = (I - K_k \, H) \, P_k^-
 $$
 
 **Where:**  
-- \( K_k \): Kalman gain  
-- \( z_k \): Measurement at step \( k \)  
-- \( H \): Measurement matrix  
-- \( R \): Measurement noise covariance  
-- \( I \): Identity matrix  
+- \($ K_k $\): Kalman gain  
+- \($ z_k $\): Measurement at step \($ k $\)  
+- \($ H $\): Measurement matrix  
+- \($ R $\): Measurement noise covariance  
+- \($ I $\): Identity matrix  
 
 ---
 
@@ -76,10 +76,10 @@ s \cdot u = K \, [R \, | \, T] \, X
 $$
 
 **Where:**  
-- \( X \): State vector in world coordinates (homogeneous form)  
-- \( R, T \): Rotation & translation (extrinsic parameters)  
-- \( K \): Intrinsic matrix  
-- \( s \): Scale factor  
+- \($ X $\): State vector in world coordinates (homogeneous form)  
+- \($ R, T $\): Rotation & translation (extrinsic parameters)  
+- \($ K $\): Intrinsic matrix  
+- \($ s $\): Scale factor  
 
 ---
 
