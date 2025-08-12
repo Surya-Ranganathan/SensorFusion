@@ -21,7 +21,7 @@ The **Kalman filter** runs in two steps: **Prediction** and **Update**.
 ### 1. Prediction Step
 
 $$
-\hat{x}_k^- = A \, \hat{x}_{k-1} + B \, u_{k-1}
+{x}_k^- = A \, {x}_{k-1} + B \, u_{k-1}
 $$
 
 $$
@@ -29,7 +29,7 @@ P_k^- = A \, P_{k-1} \, A^T + Q
 $$
 
 **Where:**
-- \( \hat{x}_k^- \) → Predicted state estimate  
+- \( {x}_k^- \) → Predicted state estimate  
 - \( P_k^- \) → Predicted covariance estimate  
 - \( A \) → State transition matrix  
 - \( B \) → Control input matrix  
