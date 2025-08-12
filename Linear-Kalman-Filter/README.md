@@ -51,7 +51,9 @@ $$
 **State Update:**
 
 $$
-\hat {x}_k = \hat {x}_k^- + K_k \left( z_k - H \, \hat {x}_k^- \right)
+\begin{aligned}
+\hat{x}_k &= \hat{x}_k^- + K_k \bigl( z_k - H \, \hat{x}_k^- \bigr)
+\end{aligned}
 $$
 
 **Covariance Update:**
